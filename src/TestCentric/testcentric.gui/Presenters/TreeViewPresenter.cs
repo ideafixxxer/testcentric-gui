@@ -168,7 +168,7 @@ namespace TestCentric.Gui.Presenters
 
             _model.Events.RunStarting += (e) =>
             {
-                ((Control)_view).Invoke(new Action(() => { (_view.Tree.TopNode as TestSuiteTreeNode)?.ClearResults(); }));
+                (_view.Tree.TopNode as TestSuiteTreeNode)?.ClearResults();
                 _view.RunCommand.Enabled = false;
                 _view.CheckPropertiesDialog();
             };
